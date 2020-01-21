@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  pixel-pet:
+    container_name: pixel-pet
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/pixel-pet'
+      - '/usr/src/pixel-pet/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
