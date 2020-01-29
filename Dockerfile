@@ -11,6 +11,8 @@ ENV PATH /usr/src/pixel-pet/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json /usr/src/pixel-pet/package.json
 RUN npm install
+RUN npm audit fix
+
 
 # start app
-RUN expo start --ios
+RUN expo start
